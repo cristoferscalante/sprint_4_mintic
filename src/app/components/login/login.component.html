@@ -1,0 +1,34 @@
+<div class="content center-login">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Iniciar sesión</mat-card-title>
+            <mat-card-subtitle>Por favor ingresa las credenciales</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="card-content">
+            <form [formGroup]="loginForm" (ngSubmit)="doLogin()" class="login-form" #loginFormRef="ngForm">
+                <mat-form-field appearance="fill">
+                    <mat-label>Correo electrónico</mat-label>
+                    <mat-icon class="email" fontIcon="mail"></mat-icon>
+                    <input matInput formControlName="email">
+                    <mat-error *ngIf="hasError('email')">
+                        <span *ngIf="hasErrorForValidation('email', 'required')">Escriba el correo, no sea idiota</span>
+                        <span *ngIf="hasErrorForValidation('email', 'email')">Escriba bien el correo, idiota</span>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput formControlName="password" [type]="icon === 'visibility' ? 'text': 'password'">
+                    <mat-error *ngIf="hasError('password')">
+                        <span *ngIf="hasErrorForValidation('password', 'required')">La contraseña támbien, idiota</span>
+                        <span *ngIf="hasErrorForValidation('password', 'minlength')">Mínimo 8 caracteres, idiota</span>
+                    </mat-error> 
+                    <mat-icon matSuffix (click)="toggleIcon()">{{icon}}</mat-icon>  
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-raised-button color="accent" [disabled]="!loginForm.valid || loginForm.untouched" (click)="loginFormRef.ngSubmit.emit()" >Iniciar sesión</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+

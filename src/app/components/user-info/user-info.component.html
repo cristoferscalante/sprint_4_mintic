@@ -1,0 +1,9 @@
+<mat-card class="user-profile" (click)="onUserClick()">
+    <mat-card-subtitle>Perfil</mat-card-subtitle>
+    <mat-card-title>{{user.seudonimo}}</mat-card-title>
+    <mat-card-content>
+      <p>{{user.seudonimo}}</p>
+      <p>{{user.role.name}}</p>
+      <p>{{ user.role.description }}</p>
+    </mat-card-content>
+  </mat-card>

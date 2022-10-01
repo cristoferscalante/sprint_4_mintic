@@ -1,0 +1,5 @@
+<app-title [title]="'Lista de usuarios'"></app-title>
+<div class="container">
+  <app-user-info *ngFor="let user of users" [user]="user" class="container-item"
+  (onClick)="showUser($event)"></app-user-info>
+</div>

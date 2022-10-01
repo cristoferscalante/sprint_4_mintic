@@ -1,0 +1,53 @@
+.center-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mat-card{
+    box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.75);
+}
+
+.card-content{
+    padding: 2rem 2rem;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+}
+
+.mat-card-title{
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: #12FBB8;
+}
+
+.mat-card-subtitle{
+    font-size: .9rem;
+
+}
+
+.mat-card-header .mat-card-subtitle:not(:first-child) {
+    margin-top: 1.5rem;
+}
+
+.mat-form-field{
+    margin-top: 1rem;
+}
+
+.mat-card-actions-align-end .mat-raised-button:last-child{
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+}
+
+
+.email {
+    display: flex;
+    position: relative;
+    float: right;
+    justify-content: center;
+    margin-top: -.4rem;
+}
+

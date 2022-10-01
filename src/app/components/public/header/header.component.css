@@ -1,0 +1,55 @@
+span{
+    cursor:pointer;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.items {
+    font-size: 0.9rem;
+}
+
+.item {
+    margin: 0px 0.25rem
+}
+
+
+
+.color{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    background-color: #FBDA61;
+background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
+
+}
+
+.icon-registraduria{
+    padding: 20px;
+    width: 7rem;
+    height: 4rem;
+    display: flex;
+    margin-right: 3rem;
+}
+
+.Barra {
+    display: flex;
+    justify-content: center;
+    border-left: solid #000;
+    height: 4rem;
+    margin: 2rem;
+}
+
+.icon-sigloxxi{
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+mat-toolbar{
+    background-color: #FBDA61;
+background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
+
+}

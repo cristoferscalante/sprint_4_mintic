@@ -1,0 +1,33 @@
+<!-- <div class="color">
+    <img class="icon-registraduria" src="https://www.registraduria.gov.co/IMG/cnvs/images/logo-dark.png">
+    <div class="Barra"></div>
+    <img class="icon-sigloxxi" src="https://www.registraduria.gov.co/IMG/LogosHeader/logos_web_sigloXXI_negro.png">
+</div> -->
+
+
+
+<mat-toolbar>
+    <span *ngIf="!isLoggedIn" [routerLink]="['/']">Mintic</span>
+    <span *ngIf="isLoggedIn" [routerLink]="['/','dashboard']">Home</span>
+    <div class="spacer" *ngIf="isLoggedIn"></div>
+    <div *ngIf="isLoggedIn" class="items">
+      <span class="item" *appHasPermission="['Admin']" [routerLink]="['/','dashboard', 'roles']">Roles</span>
+      <span class="item" *appHasPermission="['Admin','Candidato, Jurado']" [routerLink]="['/','dashboard', 'user']">Ver Resultados</span>
+      <button class="item" mat-button [matMenuTriggerFor]="menu">{{username}}</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item class="item">Mi perfil</button>
+        <button mat-menu-item (click)="logout()" class="item">Logout</button>
+      </mat-menu>
+    </div>
+    <div *ngIf="!isLoggedIn" class="items">
+      <span class="item" [routerLink]="['/','sign-up']">Registrate</span>
+    </div>
+  </mat-toolbar>
+
+
+
+
+
+
+<!-- Me quede en el video#20 min 29:01-->
+

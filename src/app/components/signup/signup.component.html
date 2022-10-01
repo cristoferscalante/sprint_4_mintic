@@ -1,0 +1,49 @@
+<div class="content center-login">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Registrate</mat-card-title>
+      <mat-card-subtitle>Ingresa tus datos</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="card-content">
+      <form [formGroup]="signUpForm" (ngSubmit)="submit()" class="login-form" #signUpFormRef="ngForm">
+        <mat-form-field appearance="fill">
+          <mat-label>Correo electronico</mat-label>
+          <input matInput formControlName="email">
+          <mat-error *ngIf="hasError('email')">
+            <span *ngIf="hasErrorForValidation('email','required')">Correo electronico requerido</span>
+            <span *ngIf="hasErrorForValidation('email','email')">Correo electronico invalido</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Ingrese el nombre</mat-label>
+          <input matInput formControlName="name">
+          <mat-error *ngIf="hasError('name')">
+            <span *ngIf="hasErrorForValidation('name','required')">El nombre es requerido</span>
+            <span *ngIf="hasErrorForValidation('name','minlength')">El nombre debe seer minino 3 caracteres</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Ingrese el apellido</mat-label>
+          <input matInput formControlName="lastName">
+          <mat-error *ngIf="hasError('email')">
+            <span *ngIf="hasErrorForValidation('lastName','required')">El apellido requerido</span>
+            <span *ngIf="hasErrorForValidation('lastName','minlength')">El apellido debe seer minino 3 caracteres</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" *ngIf="user === undefined">
+          <mat-label>Contraseña</mat-label>
+          <input matInput formControlName="password" [type]="icon === 'visibility' ? 'text': 'password'">
+          <mat-error *ngIf="hasError('password')">
+            <span *ngIf="hasErrorForValidation('password','required')">Contraseña requerido</span>
+            <span *ngIf="hasErrorForValidation('password','minlength')">Contraseña debe ser minimo 8 caracteres</span>
+          </mat-error>
+          <mat-icon matSuffix (click)="toggleIcon()">{{icon}}</mat-icon>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button color="primary" [disabled]="!signUpForm.valid || signUpForm.untouched"
+      (click)="signUpFormRef.ngSubmit.emit()">{{text}}</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
